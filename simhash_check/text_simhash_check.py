@@ -36,7 +36,7 @@ def get_simhash(file_path):
         progressbar.next()
         progressbar.suffix= f'{file_path[-30:]}' 
         with open(file_path, 'rb') as f:
-            content = f.read(8192)
+            content = f.read()
             # 检测文件编码并转换为UTF-8编码
             encoding = cchardet.detect(content)['encoding']
             content = content.decode(encoding, errors='ignore')
